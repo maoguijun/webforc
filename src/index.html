@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>YOUPLUS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--[if lt IE 10]>
+    <script src="https://as.alipayobjects.com/component/??console-polyfill/0.2.2/index.js,es5-shim/4.1.14/es5-shim.js,es5-shim/4.1.14/es5-sham.js,html5shiv/3.7.2/html5shiv.js"></script>
+  <![endif]-->
+  <script>
+    if (!window.Intl) {
+        document.writeln('<script src="https://as.alipayobjects.com/g/component/intl/1.0.1/Intl.js">' + '<' + '/script>');
+        document.writeln('<script src="https://as.alipayobjects.com/g/component/intl/1.0.1/locale-data/jsonp/zh.js">' + '<' + '/script>');
+    }
+</script>
+	<script src=".public/js/jquery.min.js"></script>
+	<script type="text/javascript">
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if (clientWidth >= 1920) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / 1920) + 'px';
+            }
+          };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        /*DOMContentLoaded文档加载完成不包含图片资源 onload包含图片资源*/
+      })(document, window);
+    </script>
+</head>
+<body>
+  <div id="root" style="height: 100%"></div>
+</body>
+</html>
